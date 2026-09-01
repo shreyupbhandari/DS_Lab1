@@ -8,8 +8,18 @@ public class Lab1 {
 	*/
 	   public static int squares(int n)
 	   {
+		   if (n < 0)
+		   {
+			   return -1;
+		   }
+		   int sumOfSquares=0;
+		   
+		   for (int i=1 ; i<=n ; i++)
+		   {
+			sumOfSquares+=i*i;  
+		   }
 	   
-	      return 0;  
+	      return sumOfSquares;  
 	   
 	   }
 
@@ -22,6 +32,27 @@ public class Lab1 {
 	*/
 	   public static int maxIndex(int array[],int len)
 	   {
+		   if (len == 0)
+		   {
+			   return -1;
+		   }
+		   
+		   float maxValue=array[0];
+		   
+		   for (int i = 0 ; i < len ; i++)
+		   {
+			   if (array[i]>maxValue) 
+			   {
+				   maxValue=array[i];
+			   }
+		   }
+		   for (int i = 0 ; i < len ; i++)
+		   {
+			   if (maxValue==array[i]) 
+			   {
+				   return i;
+			   }
+		   }
    
 	      return 0;
 	   }
@@ -34,13 +65,22 @@ public class Lab1 {
 	*/
 	   public static boolean seek(int array[],int len,int target)
 	   {
+		   if (len==0)
+		   {
+			   return false;
+		   }
+		   for (int i=0 ; i<len ; i++)
+		   {
+			   if (target==array[i])
+			   {
+				   return true;
+			   }
+		   }
    
 	      return false;      
 	  	
 	      
 	   }
-
-
 
 	/**
 	* This function takes an integer parameter and returns the nth number in the Fibonacci 
@@ -51,7 +91,26 @@ public class Lab1 {
 	*/
 	   public static int fib(int n)
 	   {
-	      return 0;
+		   
+		   if (n<=0)
+		   {
+			   return 0;
+		   }
+		   
+		   if (n==1)
+		   {
+			   return 1;
+		   }
+		   
+		   int a=0,b=1,c;
+		   
+		   for (int i=1 ; i<n; i++)      
+		   {
+			c=a+b;
+			a=b;
+			b=c;
+		   }
+		   return 0;
 	   }
 
 }
