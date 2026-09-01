@@ -91,8 +91,7 @@ public class Lab1 {
 	*/
 	   public static int fib(int n)
 	   {
-		   
-		   if (n<=0)
+		   if (n<0)
 		   {
 			   return 0;
 		   }
@@ -100,17 +99,22 @@ public class Lab1 {
 		   if (n==1)
 		   {
 			   return 1;
+			   
 		   }
 		   
-		   int a=0,b=1,c;
-		   
-		   for (int i=1 ; i<n; i++)      
+		   else 
 		   {
-			c=a+b;
-			a=b;
-			b=c;
+			   int a=0;
+			   int b=1;
+			   int c=0;
+			   for (int i=1;i<n;i++)
+			   {
+				   c=a+b;
+				   a=b;
+				   b=c;
+			   }
+			   return c;
 		   }
-		   return 0;
 	   }
 
 }
